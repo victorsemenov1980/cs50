@@ -1,0 +1,90 @@
+/* line 3, /Users/user/Documents/GitHub/cs50/Pset0/style2.scss */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0; }
+
+/* line 9, /Users/user/Documents/GitHub/cs50/Pset0/style2.scss */
+header {
+  height: 68px;
+  background-color: #dfdfdf;
+  border: 1px solid #b5b7ba;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+/* line 18, /Users/user/Documents/GitHub/cs50/Pset0/style2.scss */
+header a {
+  font-size: 20px;
+  color: #4d4d4d;
+  text-decoration: none; }
+
+/* line 24, /Users/user/Documents/GitHub/cs50/Pset0/style2.scss */
+h1 {
+  font-size: 40px;
+  font-weight: 300;
+  color: #2e353d;
+  text-align: center; }
+
+/* line 31, /Users/user/Documents/GitHub/cs50/Pset0/style2.scss */
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5%; }
+  /* line 38, /Users/user/Documents/GitHub/cs50/Pset0/style2.scss */
+  main main p {
+    font-size: 24px;
+    font-weight: 100;
+    color: #242424;
+    line-height: 36px;
+    width: 706px; }
+
+/* line 47, /Users/user/Documents/GitHub/cs50/Pset0/style2.scss */
+main img {
+  margin-right: 16px;
+  margin-left: 16px;
+  width: 350px;
+  margin-bottom: 32px; }
+
+/* line 56, /Users/user/Documents/GitHub/cs50/Pset0/style2.scss */
+footer {
+  height: 120px;
+  background-color: #434445;
+  font-size: 20px;
+  color: #a4a4a4;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/* line 66, /Users/user/Documents/GitHub/cs50/Pset0/style2.scss */
+#mail_link:hover {
+  color: black;
+  background-color: navajowhite; }
+
+/* line 71, /Users/user/Documents/GitHub/cs50/Pset0/style2.scss */
+.main_page:hover {
+  background-color: antiquewhite; }
+
+/* line 75, /Users/user/Documents/GitHub/cs50/Pset0/style2.scss */
+.main, .image, .form {
+  height: 68px;
+  background-color: #dfdfdf;
+  border: 1px solid #b5b7ba;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+/* line 84, /Users/user/Documents/GitHub/cs50/Pset0/style2.scss */
+.main {
+  background-color: whitesmoke; }
+
+/* line 89, /Users/user/Documents/GitHub/cs50/Pset0/style2.scss */
+.image {
+  background-color: antiquewhite; }
+
+/* line 94, /Users/user/Documents/GitHub/cs50/Pset0/style2.scss */
+.form {
+  background-color: floralwhite; }
+
+/*# sourceMappingURL=style2.css.map */

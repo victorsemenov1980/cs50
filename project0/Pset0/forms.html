@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page with many things in it</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+       
+
+        .grid {
+            background-color: floralwhite;
+            display: grid;
+            padding: 20px;
+            grid-column-gap: 20px;
+            grid-row-gap: 10px;
+            grid-template-columns: auto auto auto;
+        }
+
+        .grid-item {
+            background-color: skyblue;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <a href="index.html" class="main_page">Main</a>
+                </div>
+                <div class="col-sm">
+                    <a href="venice.html">Venice</a>
+                </div>
+                <div class="col-sm">
+                    <a href="paris.html">Paris</a>
+                </div>
+                <div class="col-sm">
+                    <a href="feedback.html">Feedback</a>
+                </div>
+                <div class="col-sm">
+                    <a href="forms.html">Academic</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </header>
+    <h1>Personal page of CS50 student</h1>
+    <main>
+        Here are the courses I have taken so far:
+        <ul>
+            <li>
+                Harvard's CS50
+
+            </li>
+            <li>MIT 6.0001
+            </li>
+            <li>MIT 6.0002</li>
+        </ul>
+        Here are some courses in my plans:
+        <ul>
+            <li>Harvard's CS50 Web</li>
+            <li>Harvard's CS50 AI with Python</li>
+        </ul>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Oh look down here!</strong> You should check these links!.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <div class="grid">
+            <div class="grid-item"><a href="https://ocw.mit.edu/courses/intro-programming/">MIT</a></div>
+            <div class="grid-item"><a href="https://online-learning.harvard.edu/subject/python">HARVARD</a></div>
+            <div class="grid-item"><a href="https://getbootstrap.com/docs/4.4/getting-started/introduction/">BOOTSTRAP</a></div>
+
+        </div>
+    </main>
+    <footer>Copyright 2020</footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
