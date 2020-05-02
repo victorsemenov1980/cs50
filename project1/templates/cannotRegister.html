@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Books by Viktor webAPP</title>
+    <title>WebApp BOOKs by Viktor</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
-       
 
-        
+
+
 
     </style>
 </head>
@@ -24,20 +24,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <a href="index.html" class="main_page">Main</a>
+                    <a href="{{ url_for('index') }}">Log in</a>
                 </div>
+                
                 <div class="col-sm">
-                    <a href="venice.html">Venice</a>
+                    
+                    <a href="{{ url_for('register') }}">Registration Page</a>
                 </div>
-                <div class="col-sm">
-                    <a href="paris.html">Paris</a>
-                </div>
-                <div class="col-sm">
-                    <a href="feedback.html">Feedback</a>
-                </div>
-                <div class="col-sm">
-                    <a href="forms.html">Academic</a>
-                </div>
+                
             </div>
         </div>
 
@@ -45,24 +39,12 @@
 
 
     </header>
-    <h1>Personal page of CS50 student</h1>
+    
     <main>
-        Here are the courses I have taken so far:
-        <ul>
-            <li>
-                Harvard's CS50
-
-            </li>
-            <li>MIT 6.0001
-            </li>
-            <li>MIT 6.0002</li>
-        </ul>
-        Here are some courses in my plans:
-        <ul>
-            <li>Harvard's CS50 Web</li>
-            <li>Harvard's CS50 AI with Python</li>
-        </ul>
         
+        <h1>{{log_in_message}}</h1>
+        
+
     </main>
     <footer>Copyright 2020</footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

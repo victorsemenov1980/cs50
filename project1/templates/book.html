@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WebApp BOOKs by Viktor</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <div class='bg-light container'>
+        <div class='float-right'>{{username}} <a href="{{url_for('logout')}}"> Log out</a></div>
+    </div>
+</head>
+
+
+<body>
+    <header>
+
+
+
+
+
+    </header>
+    <h1>Books detailed information and reviews</h1>
+    <h2>{{output}}</h2>
+    <h3>{{data.title}}</h3>
+    <ul>
+        Author:<h5> {{data.author}}</h5>
+        Year:<h5> {{data.year}}</h5>
+        Isbn:<h5> {{data.isbn}}</h5>
+    </ul>
+    <h6>Average rating GoodReads:{{average_rating}} </h6>
+    <h6>Review count on GoodReads:{{ratings_count}} </h6>
+    <ul><h3>Reviews and raitings on our site:</h3>
+        {% if reviews != None %}
+        {%for rev in reviews%}
+        <li>
+            <p>Rating: {{rev.rating}}</p>
+            <p>Review: {{rev.review}}</p>
+        </li>
+        {%endfor%}
+
+        {% endif %}
+    </ul>
+    <main>
+        <form action="{{url_for('book',isbn=data.isbn)}}" method="post">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Your personal rating for this book</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="rating">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Enter your review here. Only one review per book is allowed</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="review"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </main>
+
+    <footer><div class='bg-light text-center '><a href='/api/{{data.isbn}}'>API</a></div></footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
