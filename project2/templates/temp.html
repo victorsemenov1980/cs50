@@ -1,0 +1,31 @@
+<HTML>
+
+<head>
+    <script>
+        function myfunction1() { //remember code var
+            pass = document.getElementById('username').value;
+            localStorage.setItem('username', pass);
+        }
+
+        function
+        myfunction2() { //recall code
+            document.getElementById('recalledtext').innerHTML =
+                localStorage.getItem('username');
+        }
+
+    </script>
+</head>
+
+<body>
+    
+    
+    <button id="recaller" onclick='myfunction2()'>recall text </button>
+    <p id="recalledtext">Loading</p>
+
+    <label for="username">Enter your username</label>
+    <input type="text" class="form-control" id="username" aria-describedby="username" name="username">
+    <button type="submit" class="btn btn-primary" onclick='myfunction1()'>Submit</button>
+    <a href=temp2.html>Temp2</a>
+</body>
+
+</HTML>
