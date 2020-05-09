@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1>Hello, {{ user.username|upper }}</h1>
+<ul>
+    <li>Currently logged in as: {{ user.username }}</li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+    <li><a href="{% url 'get_cart' %}">View your cart</a></li>
+</ul>
+
+<h1>Your order is received. Kindly await for our delivery boy</h1>
+
+    
+
+    {% endblock %}

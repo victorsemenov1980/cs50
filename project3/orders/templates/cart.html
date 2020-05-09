@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block body %}
+<script>
+    function maxAllowedMultiselect(obj, maxAllowedCount) {
+        var selectedOptions = jQuery('#' + obj.id + " option[value!=\'\']:selected");
+        if (selectedOptions.length >= maxAllowedCount) {
+            if (selectedOptions.length > maxAllowedCount) {
+                selectedOptions.each(function(i) {
+                    if (i >= maxAllowedCount) {
+                        jQuery(this).prop("selected", false);
+                    }
+                });
+            }
+            jQuery('#' + obj.id + ' option[value!=\'\']').not(':selected').prop("disabled", true);
+        } else {
+            jQuery('#' + obj.id + ' option[value!=\'\']').prop("disabled", false);
+        }
+    }
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<h1>Hello, {{ user.username|upper }}</h1>
+<ul>
+    <li>Currently logged in as: {{ user.username }}</li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+    <li><a href="{% url 'index' %}">Back to shopping</a></li>
+</ul>
+
+<h2>Your cart</h2>
+
+<table style="width:50%; float:left">
+    <tr>
+        <th>Name</th>
+        
+        <th>Size</th>
+
+        <th>Price</th>
+
+        <th></th>
+    </tr>
+
+    {% for item in cart %}
+
+    <tr>
+        <td>{{ item.name }}</td>
+        
+        <td> {{ item.size }} </td>
+        <td>{{ item.price }}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+<table style="width:50%; float:left">
+    <tr>
+        <th></th>
+        <th>Toppings</th>
+        <th>Topings' selection</th>
+        <th></th>
+    </tr>
+{% load template_filters%}
+     {%for i,j in new%}
+    <tr>
+        <td>Select up to {{ j.toppings }} toppings</td>
+        <td><ul>
+        <li>{{grouped4|get_item:i.id}} </li>
+        </ul></td>
+        <td>
+
+            <form action="{% url 'add_topping' %}" method="post">
+                {% csrf_token %}
+
+                <label for="toppings">Choose topping:</label>
+                <select id="toppings" name="topping">
+                    {%for topping in n%}
+                    <option value={{topping.id}}>{{topping.name}}</option>
+                    {%endfor%}
+                </select>
+                <button type="submit" class="btn btn-outline-secondary" name='element.id' value={{i.id}}>Save</button>
+            </form>
+        </td>
+
+        <td>
+            <form action="{% url 'remove_from_cart' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-secondary" name='element.id' value={{i.id}}>Remove from cart</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<p>Total cost={{cart_cost}}</p>
+<form action="{% url 'place_order' %}" method="post">
+    {% csrf_token %}
+    <p>
+
+        <td><button type="submit" class="btn btn-outline-secondary" name='confirmation' value="True">Confirm my order</button></td>
+    </p>
+</form>
+
+<ul>CheckSum for order with toppings
+    {%for topping in super_cart%}
+    <li>{{topping.id}}+{{topping.orders__name}}+{{topping.toppings__name}}</li>
+    {% endfor %}
+</ul>
+
+<p>Order with toppings{{grouped4}}</p>
+
+{% endblock %}
