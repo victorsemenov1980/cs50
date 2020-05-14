@@ -1,0 +1,1 @@
+SELECT title FROM movies,people,stars WHERE name ="Johnny Depp"   AND people.id=stars.person_id AND stars.movie_id=movies.id INTERSECT SELECT title FROM movies,people,stars WHERE name ="Helena Bonham Carter"   AND people.id=stars.person_id AND stars.movie_id=movies.id 

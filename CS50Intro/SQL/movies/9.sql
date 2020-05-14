@@ -1,0 +1,1 @@
+SELECT COUNT(DISTINCT people.id) FROM stars,movies,people WHERE year=2004 AND movies.id=stars.movie_id AND stars.person_id=people.id ORDER BY birth
