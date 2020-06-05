@@ -196,15 +196,16 @@ class MinesweeperAI():
             5) add any new sentences to the AI's knowledge base
                if they can be inferred from existing knowledge
         """
-        #make a move and if gave is not over-mark this move
+        #make a move and if game is not over-mark this move safe
         self.safes.add(cell)
         self.moves_made.add(cell)
         cells = []
+        # Loop over all cells within one row and column
         for i in range(cell[0] - 1, cell[0] + 2):
             for j in range(cell[1] - 1, cell[1] + 2):
                 if 0 <= i < self.height and 0 <= j < self.width:
                     tmp_cell = (i,j)
-                    if (tmp_cell != cell):
+                    if (tmp_cell != cell): #exclude the move itself
                         cells.append(tmp_cell)
         self.knowledge.add(Sentence(cells, count))
         # add safe cell
@@ -239,7 +240,8 @@ class MinesweeperAI():
                     new_count = sentence2.count - sentence1.count
                     new_set = sentence2.cells.difference(sentence1.cells)
                     new_sentences.append(Sentence(new_set,new_count))
-        [self.knowledge.add(sentence) for sentence in new_sentences]
+        for sentence in new_sentences:
+            self.knowledge.add(sentence) 
 
         
 
